@@ -1,0 +1,690 @@
+.call-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.error-box {
+  background: #d00000;
+  border: 4px solid #fff;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 8px 8px 0 #000;
+  max-width: 600px;
+}
+
+.error-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.error-title {
+  font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+  color: #fff;
+  text-shadow: 3px 3px 0 #000;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+  color: #fff;
+  text-shadow: none;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.error-code {
+  background: #000;
+  border: 3px solid #fff;
+  padding: 1rem;
+  margin: 1rem 0;
+  font-size: 0.7rem;
+  color: #ffcc00;
+  text-align: left;
+  font-family: monospace;
+  line-height: 1.8;
+}
+
+.error-note {
+  font-size: 0.6rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  line-height: 1.8;
+}
+
+.error-note a {
+  color: #ffcc00;
+  text-decoration: underline;
+}
+
+.phone-frame {
+  background: #00a800;
+  border: 6px solid #fff;
+  border-radius: 0;
+  padding: 1.5rem;
+  box-shadow: 8px 8px 0 #000;
+  max-width: 500px;
+  width: 100%;
+}
+
+.phone-screen {
+  background: #1a1a1a;
+  border: 4px solid #000;
+  border-radius: 0;
+  padding: 2rem 1.5rem;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.call-header {
+  text-align: center;
+  border-bottom: 3px solid #fff;
+  padding-bottom: 1rem;
+}
+
+.caller-name {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  color: #ffcc00;
+  text-shadow: 3px 3px 0 #000;
+  margin-bottom: 0.5rem;
+}
+
+.call-time {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.santa-avatar {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.avatar-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 0;
+  background: #d00000;
+  border: 5px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+  box-shadow: 6px 6px 0 #000;
+  transition: none;
+}
+
+.avatar-circle.listening {
+  animation: pulse 1.5s ease-in-out infinite;
+  border-color: #00ff00;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.avatar-circle.speaking {
+  animation: pulse 1s ease-in-out infinite;
+  border-color: #00ccff;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.status-display {
+  text-align: center;
+  padding: 1rem;
+  background: #000;
+  border: 3px solid #fff;
+  border-radius: 0;
+}
+
+.status-text {
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #ffcc00;
+  text-shadow: none;
+  margin-bottom: 0.5rem;
+}
+
+.sub-status {
+  font-size: clamp(0.6rem, 1.5vw, 0.75rem);
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  line-height: 1.6;
+}
+
+.call-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: auto;
+}
+
+.mic-button {
+  font-family: 'Press Start 2P', cursive;
+  background: #00a800;
+  border: 4px solid #fff;
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: none;
+  box-shadow: 6px 6px 0 #000;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.mic-button:hover:not(:disabled) {
+  background: #00c800;
+}
+
+.mic-button:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 #000;
+}
+
+.mic-button.recording {
+  background: #d00000;
+  box-shadow: 6px 6px 0 #000;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+.mic-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.mic-icon {
+  font-size: 3rem;
+}
+
+.mic-label {
+  font-size: 0.8rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.end-button {
+  font-family: 'Press Start 2P', cursive;
+  background: #990000;
+  border: 4px solid #fff;
+  padding: 1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: none;
+  box-shadow: 6px 6px 0 #000;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.end-button:hover {
+  background: #bb0000;
+}
+
+.end-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 #000;
+}
+
+.end-icon {
+  font-size: 2rem;
+}
+
+.end-label {
+  font-size: 0.7rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.conversation-log {
+  background: #000;
+  border: 3px solid #ffcc00;
+  border-radius: 0;
+  padding: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.conversation-log::-webkit-scrollbar {
+  width: 6px;
+}
+
+.conversation-log::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 0;
+}
+
+.conversation-log::-webkit-scrollbar-thumb {
+  background: #ffcc00;
+  border-radius: 0;
+}
+
+.log-title {
+  font-size: 0.7rem;
+  color: #ffcc00;
+  text-shadow: none;
+  margin-bottom: 0.8rem;
+}
+
+.log-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.message {
+  font-size: 0.6rem;
+  line-height: 1.6;
+  padding: 0.5rem;
+  border-radius: 0;
+  background: #1a1a1a;
+  border: 2px solid;
+}
+
+.message.user {
+  border-color: #00a800;
+  background: #1a1a1a;
+}
+
+.message.assistant {
+  border-color: #d00000;
+  background: #1a1a1a;
+}
+
+.message-label {
+  color: #ffcc00;
+  text-shadow: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.message-text {
+  color: #fff;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.instructions-box {
+  background: #0066cc;
+  border: 4px solid #fff;
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 8px 8px 0 #000;
+}
+
+.instructions-title {
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  color: #fff;
+  text-shadow: 3px 3px 0 #000;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.instructions-list {
+  font-size: clamp(0.6rem, 1.8vw, 0.75rem);
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+  line-height: 2;
+  padding-left: 1.5rem;
+}
+
+.instructions-list li {
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .call-container {
+    gap: 1rem;
+  }
+
+  .error-box {
+    padding: 1.5rem;
+    border: 3px solid #fff;
+    box-shadow: 6px 6px 0 #000;
+  }
+
+  .error-icon {
+    font-size: 3rem;
+  }
+
+  .error-title {
+    font-size: clamp(0.8rem, 3vw, 1rem);
+  }
+
+  .error-message {
+    font-size: clamp(0.55rem, 2vw, 0.7rem);
+  }
+
+  .error-code {
+    padding: 0.8rem;
+    font-size: 0.6rem;
+  }
+
+  .error-note {
+    font-size: 0.55rem;
+  }
+
+  .phone-frame {
+    padding: 1rem;
+    border: 4px solid #fff;
+    box-shadow: 6px 6px 0 #000;
+  }
+
+  .phone-screen {
+    padding: 1.5rem 1rem;
+    min-height: 450px;
+    border: 3px solid #000;
+  }
+
+  .call-header {
+    border-bottom: 2px solid #fff;
+  }
+
+  .caller-name {
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+  }
+
+  .call-time {
+    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+  }
+
+  .avatar-circle {
+    width: 120px;
+    height: 120px;
+    font-size: 4rem;
+    border: 4px solid #fff;
+  }
+
+  .status-display {
+    padding: 0.8rem;
+    border: 2px solid #fff;
+  }
+
+  .status-text {
+    font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+  }
+
+  .sub-status {
+    font-size: clamp(0.55rem, 1.8vw, 0.7rem);
+  }
+
+  .call-controls {
+    gap: 0.8rem;
+  }
+
+  .mic-button {
+    padding: 1.2rem;
+    border: 3px solid #fff;
+    min-height: 80px;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .mic-button:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  .mic-icon {
+    font-size: 2.5rem;
+  }
+
+  .mic-label {
+    font-size: 0.7rem;
+  }
+
+  .end-button {
+    padding: 0.9rem;
+    border: 3px solid #fff;
+    min-height: 60px;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .end-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  .end-icon {
+    font-size: 1.8rem;
+  }
+
+  .end-label {
+    font-size: 0.65rem;
+  }
+
+  .conversation-log {
+    padding: 0.8rem;
+    max-height: 180px;
+    border: 2px solid #ffcc00;
+  }
+
+  .log-title {
+    font-size: 0.65rem;
+  }
+
+  .message {
+    font-size: 0.55rem;
+    padding: 0.4rem;
+  }
+
+  .instructions-box {
+    padding: 1.5rem;
+    border: 3px solid #fff;
+    box-shadow: 6px 6px 0 #000;
+  }
+
+  .instructions-title {
+    font-size: clamp(0.7rem, 2.8vw, 0.9rem);
+  }
+
+  .instructions-list {
+    font-size: clamp(0.55rem, 2vw, 0.7rem);
+    padding-left: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .call-container {
+    gap: 0.75rem;
+  }
+
+  .error-box {
+    padding: 1rem;
+    border: 2px solid #fff;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .error-icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .error-title {
+    font-size: clamp(0.7rem, 3.5vw, 0.9rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .error-message {
+    font-size: clamp(0.5rem, 2.2vw, 0.65rem);
+    margin-bottom: 0.75rem;
+    line-height: 2;
+  }
+
+  .error-code {
+    padding: 0.6rem;
+    font-size: 0.5rem;
+    margin: 0.75rem 0;
+  }
+
+  .error-note {
+    font-size: 0.5rem;
+    line-height: 2;
+  }
+
+  .phone-frame {
+    padding: 0.75rem;
+    border: 3px solid #fff;
+    border-radius: 0;
+    box-shadow: 6px 6px 0 #000;
+  }
+
+  .phone-screen {
+    padding: 1.2rem 0.8rem;
+    min-height: 380px;
+    gap: 1rem;
+    border: 2px solid #000;
+    border-radius: 0;
+  }
+
+  .call-header {
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #fff;
+  }
+
+  .caller-name {
+    font-size: clamp(0.8rem, 4vw, 1.1rem);
+    margin-bottom: 0.3rem;
+  }
+
+  .call-time {
+    font-size: clamp(0.65rem, 2.8vw, 0.85rem);
+  }
+
+  .santa-avatar {
+    margin: 0.75rem 0;
+  }
+
+  .avatar-circle {
+    width: 100px;
+    height: 100px;
+    font-size: 3.5rem;
+    border: 3px solid #fff;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .status-display {
+    padding: 0.75rem;
+    border: 2px solid #fff;
+    border-radius: 0;
+  }
+
+  .status-text {
+    font-size: clamp(0.65rem, 2.8vw, 0.85rem);
+    margin-bottom: 0.4rem;
+  }
+
+  .sub-status {
+    font-size: clamp(0.5rem, 2vw, 0.65rem);
+    line-height: 1.8;
+  }
+
+  .call-controls {
+    gap: 0.6rem;
+  }
+
+  .mic-button {
+    padding: 1rem;
+    border: 2px solid #fff;
+    min-height: 75px;
+    box-shadow: 4px 4px 0 #000;
+    gap: 0.4rem;
+  }
+
+  .mic-button:active:not(:disabled) {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  .mic-button.recording {
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .mic-icon {
+    font-size: 2.2rem;
+  }
+
+  .mic-label {
+    font-size: 0.65rem;
+  }
+
+  .end-button {
+    padding: 0.8rem;
+    border: 2px solid #fff;
+    min-height: 55px;
+    gap: 0.4rem;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .end-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  .end-icon {
+    font-size: 1.6rem;
+  }
+
+  .end-label {
+    font-size: 0.6rem;
+  }
+
+  .conversation-log {
+    padding: 0.65rem;
+    max-height: 150px;
+    border: 2px solid #ffcc00;
+    border-radius: 0;
+  }
+
+  .log-title {
+    font-size: 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .log-messages {
+    gap: 0.6rem;
+  }
+
+  .message {
+    font-size: 0.5rem;
+    line-height: 1.8;
+    padding: 0.4rem;
+    border-radius: 0;
+  }
+
+  .message-label {
+    margin-right: 0.4rem;
+  }
+
+  .instructions-box {
+    padding: 1rem;
+    border: 2px solid #fff;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .instructions-title {
+    font-size: clamp(0.65rem, 3.2vw, 0.85rem);
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+
+  .instructions-list {
+    font-size: clamp(0.5rem, 2.2vw, 0.65rem);
+    line-height: 2.2;
+    padding-left: 1rem;
+  }
+
+  .instructions-list li {
+    margin-bottom: 0.6rem;
+  }
+}

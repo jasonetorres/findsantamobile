@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background: #000;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.app-header {
+  padding: 2rem 1rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.pixel-border {
+  background: #d00000;
+  padding: 1.5rem;
+  border: 4px solid #fff;
+  box-shadow: 8px 8px 0 #000;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.pixel-border::before {
+  content: '⭐';
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  font-size: 2rem;
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+.pixel-border::after {
+  content: '⭐';
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  font-size: 2rem;
+  animation: twinkle 2s ease-in-out infinite 1s;
+}
+
+.title {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #fff;
+  text-shadow: 4px 4px 0 #000;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+}
+
+.pixel-button {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(0.6rem, 2vw, 0.8rem);
+  padding: 1rem 1.5rem;
+  background: #00a800;
+  color: #fff;
+  border: 4px solid #fff;
+  cursor: pointer;
+  transition: none;
+  text-transform: uppercase;
+  box-shadow: 6px 6px 0 #000;
+  position: relative;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pixel-button:hover {
+  background: #00c800;
+}
+
+.pixel-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 4px 4px 0 #000;
+}
+
+.pixel-button.active {
+  background: #ffcc00;
+  color: #000;
+  box-shadow: 6px 6px 0 #000;
+}
+
+.app-content {
+  flex: 1;
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app-footer {
+  padding: 2rem;
+  text-align: center;
+  background: #1a1a1a;
+  border-top: 4px solid #fff;
+  position: relative;
+  z-index: 2;
+}
+
+.pixel-text {
+  font-size: 0.7rem;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    padding: 1rem 0.75rem;
+  }
+
+  .pixel-border {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 3px solid #fff;
+    box-shadow: 6px 6px 0 #000;
+  }
+
+  .pixel-border::before,
+  .pixel-border::after {
+    font-size: 1.5rem;
+    top: -15px;
+  }
+
+  .title {
+    font-size: clamp(0.75rem, 4vw, 1rem);
+    letter-spacing: 1px;
+  }
+
+  .nav-buttons {
+    gap: 0.75rem;
+    padding: 0 0.5rem;
+  }
+
+  .pixel-button {
+    padding: 1rem 1.2rem;
+    font-size: 0.55rem;
+    min-height: 48px;
+    border: 3px solid #fff;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .pixel-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  .app-content {
+    padding: 1rem 0.75rem;
+  }
+
+  .app-footer {
+    padding: 1.5rem 1rem;
+  }
+
+  .pixel-text {
+    font-size: 0.55rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .pixel-border {
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+    border: 2px solid #fff;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .pixel-border::before,
+  .pixel-border::after {
+    font-size: 1.2rem;
+    top: -12px;
+  }
+
+  .title {
+    font-size: clamp(0.65rem, 4.5vw, 0.85rem);
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+  }
+
+  .nav-buttons {
+    gap: 0.5rem;
+    padding: 0 0.5rem;
+    width: 100%;
+  }
+
+  .pixel-button {
+    padding: 0.9rem 1rem;
+    font-size: 0.5rem;
+    min-height: 48px;
+    flex: 1;
+    border: 2px solid #fff;
+    box-shadow: 4px 4px 0 #000;
+  }
+
+  .pixel-button:active {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #000;
+  }
+
+  .app-content {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .app-footer {
+    padding: 1rem 0.5rem;
+  }
+
+  .pixel-text {
+    font-size: 0.5rem;
+  }
+}
